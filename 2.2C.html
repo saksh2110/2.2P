@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bachelor of IT</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Bachelor of IT Program</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="https://www.deakin.edu.au/course/bachelor-information-technology?gclid=CjwKCAjwu4WoBhBkEiwAojNdXtki4-tu5CiwzaeCInyZFaffLexfjXb8QXitZu0TYpJ6CQ3y-uU3TBoClesQAvD_BwE&ef_id=CjwKCAjwu4WoBhBkEiwAojNdXtki4-tu5CiwzaeCInyZFaffLexfjXb8QXitZu0TYpJ6CQ3y-uU3TBoClesQAvD_BwE:G:s&s_kwcid=AL!855!3!659815700353!p!!g!!bachelor%20it&gad=1">Overview</a></li>
+            <li><a href="https://www.deakin.edu.au/__data/assets/pdf_file/0009/2547270/S326-2023-T2-coursemap.pdf">Curriculum</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="overview">
+            <h2>Program Overview</h2>
+            <p>The Bachelor of IT program offers a comprehensive education in Information Technology.</p>
+        </section>
+        
+        <section id="curriculum">
+            <h2>Curriculum</h2>
+            <ul>
+                <li>Web Development</li>
+                <li>Database Management</li>
+                <li>Networking</li>
+                <li>Software Engineering</li>
+                <li>Information Security</li>
+            </ul>
+        </section>
+        
+        <section id="quiz">
+            <h2>Take the Quiz</h2>
+            <div id="quiz-app">
+                <div v-if="!quizStarted">
+                    <button @click="startQuiz">Start Quiz</button>
+                </div>
+                <div v-else>
+                    <p>{{ question }}</p>
+                    <div v-for="(option, index) in options" :key="index">
+                        <input type="radio" :value="option" v-model="selectedOption">
+                        {{ option }}
+                    </div>
+                    <button @click="checkAnswer">Next</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.16/dist/vue.global.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
